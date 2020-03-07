@@ -52,15 +52,13 @@ $$a^n = \begin{cases}
 
 First the recursive approach, which is a direct translation of the recursive formula:
 
-```cpp
-long long binpow(long long a, long long b) {
-    if (b == 0)
+```java
+long binpow(long a, long b) {
+    if (b == 0){
         return 1;
-    long long res = binpow(a, b / 2);
-    if (b % 2)
-        return res * res * a;
-    else
-        return res * res;
+    }
+    long res = binpow(a, b / 2);
+    return res * res * (b % 2 == 1 ? a : 1);
 }
 ```
 
@@ -68,8 +66,8 @@ The second approach accomplishes the same task without recursion.
 It computes all the powers in a loop, and multiplies the ones with the corresponding set bit in $n$.
 Although the complexity of both approaches is identical, this approach will be faster in practice since we have the overhead of the recursive calls.
 
-```cpp
-long long binpow(long long a, long long b) {
+```java
+long binpow(long a, long b) {
     long long res = 1;
     while (b > 0) {
         if (b & 1)
