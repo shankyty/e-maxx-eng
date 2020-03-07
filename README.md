@@ -7,10 +7,10 @@ e-maxx-eng
 [![Build Status](https://travis-ci.org/e-maxx-eng/e-maxx-eng.svg?branch=master)](https://travis-ci.org/e-maxx-eng/e-maxx-eng)
 [![Translation Progress](https://img.shields.io/badge/translation_progress-85.2%25-yellowgreen.svg)](https://github.com/e-maxx-eng/e-maxx-eng/wiki/Translation-Progress)
 
-Translation of http://e-maxx.ru into English
+Translation of http://e-maxx.ru into English and java code samples
 
-Compiled pages are published at https://cp-algorithms.com/
+Compiled pages are published at https://shashanktyagi.io/cp-java
 
-Manual for contributors: https://cp-algorithms.com/contrib.html
+Manual for contributors: https://shashanktyagi.io/cp-java/contrib.html
 
-Test-your-page form: https://cp-algorithms.com/test.php
+Test-your-page form: https://shashanktyagi.io/cp-java/test.php
