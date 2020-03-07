@@ -68,9 +68,9 @@ Although the complexity of both approaches is identical, this approach will be f
 
 ```java
 long binpow(long a, long b) {
-    long long res = 1;
+    long res = 1;
     while (b > 0) {
-        if (b & 1)
+        if (b & 1 > 0)
             res = res * a;
         a = a * a;
         b >>= 1;
@@ -90,10 +90,10 @@ This is a very common operation. For instance it is used in computing the [modul
 **Solution:**
 Since we know that the module operator doesn't interfere with multiplications ($a \cdot b \equiv (a \bmod m) \cdot (b \bmod m) \pmod m$), we can directly use the same code, and just replace every multiplication with a modular multiplication:
 
-```cpp
-long long binpow(long long a, long long b, long long m) {
+```java
+long binpow(long a, long b, long m) {
     a %= m;
-    long long res = 1;
+    long res = 1;
     while (b > 0) {
         if (b & 1)
             res = res * a % m;
