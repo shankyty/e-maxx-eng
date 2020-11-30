@@ -90,8 +90,11 @@ void merge (pitem & t, pitem l, pitem r) {
 }
 
 void erase (pitem & t, int key) {
-	if (t->key == key)
+	if (t->key == key) {
+		pitem th = t;
 		merge (t, t->l, t->r);
+		delete th;
+	}
 	else
 		erase (key < t->key ? t->l : t->r, key);
 }
@@ -150,11 +153,12 @@ pitem build (int * a, int n) {
 	t->l = build (a, mid);
 	t->r = build (a + mid + 1, n - mid - 1);
 	heapify (t);
+	upd_cnt(t)
 	return t;
 }
 ```
 
-It's also possible to compute the sizes of the subtrees with this approach. It is enough to call `upd_cnt(t)` before returning from the `build` function.
+Note: calling `upd_cnt(t)` is only necessary if you need the subtree sizes.
 
 ## Implicit Treaps
 
@@ -301,3 +305,6 @@ void output (pitem t) {
 * [SPOJ - TWIST](http://www.spoj.com/problems/TWIST/)
 * [SPOJ - KOILINE](http://www.spoj.com/problems/KOILINE/)
 * [CodeChef - The Prestige](https://www.codechef.com/problems/PRESTIGE)
+* [Codeforces - T-Shirts](https://codeforces.com/contest/702/problem/F)
+* [Codeforces - Wizards and Roads](https://codeforces.com/problemset/problem/167/D)
+* [Codeforces - Yaroslav and Points](https://codeforces.com/contest/295/problem/E)

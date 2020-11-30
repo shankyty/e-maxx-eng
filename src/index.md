@@ -74,7 +74,7 @@ and adding new articles to the collection.*
 - **Fundamentals**
     - [String Hashing](./string/string-hashing.html)
     - [Rabin-Karp for String Matching](./string/rabin-karp.html)
-    - [Prefix function](./string/prefix-function.html)
+    - [Prefix function - Knuth-Morris-Pratt](./string/prefix-function.html)
     - [Z-function](./string/z-function.html)
     - [Suffix Array](./string/suffix-array.html)
     - [Aho-Corasick algorithm](./string/aho_corasick.html)
@@ -135,6 +135,7 @@ and adding new articles to the collection.*
     - [Oriented area of a triangle](./geometry/oriented-triangle-area.html)
     - [Area of simple polygon](./geometry/area-of-simple-polygon.html)
     - [Check if points belong to the convex polygon in O(log N)](./geometry/point-in-convex-polygon.html)
+    - [Minkowski sum of convex polygons](./geometry/minkowski.html)
     - [Pick's Theorem - area of lattice polygons](./geometry/picks-theorem.html)
     - [Lattice points of non-lattice polygon](./geometry/lattice-points.html)
 - **Convex hull**
@@ -146,6 +147,7 @@ and adding new articles to the collection.*
 - **Miscellaneous**
     - [Finding the nearest pair of points](./geometry/nearest_points.html)
     - [Delaunay triangulation and Voronoi diagram](./geometry/delaunay.html)
+    - [Vertical decomposition](./geometry/vertical_decomposition.html)
 
 ### Graphs
 
@@ -196,6 +198,7 @@ and adding new articles to the collection.*
     - [Assignment problem. Solution using min-cost-flow in O (N^5)](./graph/Assignment-problem-min-flow.html)
 - **Matchings and related problems**
     - [Bipartite Graph Check](./graph/bipartite-check.html)
+    - [Kuhn' Algorithm - Maximum Bipartite Matching](./graph/kuhn_maximum_bipartite_matching.html)
 - **Miscellaneous**
     - [Topological Sorting](./graph/topological-sort.html)
     - [Edge connectivity / Vertex connectivity](./graph/edge_vertex_connectivity.html)

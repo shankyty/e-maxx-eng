@@ -83,7 +83,7 @@ int get(ftype x) {
 
 Assume you're given a set of functions such that each two can intersect at most once. Let's keep in each vertex of a segment tree some function in such way, that if we go from root to the leaf it will be guaranteed that one of the functions we met on the path will be the one giving the minimum value in that leaf. Let's see how to construct it.
 
-Assume we're in some vertex corresponding to half-segment $[l;r)$ and the function $f_{old}$ is kept there and we add the function $f_{new}$. Then the intersection point will be either in $[l;m)$ or in $[m;r)$ where $m=\left\lfloor\tfrac{l+r}{2}\right\rfloor$. We can efficiently find that out by comparing the values of the functions in points $l$ and $m$. If the dominating function changes, then it is in $[l;m)$ otherwise it is in $[m;r)$. Now for the half of the segment with no intersection we will pick the lower function and write it in the current vertex. You can see that it will always be the one which is lower in point $m$. After that we recursively go to the other half of the segment with the function which was the upper one. As you can see this will keep correctness on the first half of segment and in the other one correctness will be maintained during the recursive call. Thus we can add functions and check the minimum value in the point in $O(\log [C\varepsilon^{-1}])$.
+Assume we're in some vertex corresponding to half-segment $[l,r)$ and the function $f_{old}$ is kept there and we add the function $f_{new}$. Then the intersection point will be either in $[l;m)$ or in $[m;r)$ where $m=\left\lfloor\tfrac{l+r}{2}\right\rfloor$. We can efficiently find that out by comparing the values of the functions in points $l$ and $m$. If the dominating function changes, then it is in $[l;m)$ otherwise it is in $[m;r)$. Now for the half of the segment with no intersection we will pick the lower function and write it in the current vertex. You can see that it will always be the one which is lower in point $m$. After that we recursively go to the other half of the segment with the function which was the upper one. As you can see this will keep correctness on the first half of segment and in the other one correctness will be maintained during the recursive call. Thus we can add functions and check the minimum value in the point in $O(\log [C\varepsilon^{-1}])$.
 
 Here is the illustration of what is going on in the vertex when we add new function:
 
@@ -145,6 +145,11 @@ int get(int x, int v = 1, int l = 0, int r = maxn) {
 
 ## Problems
 
+* [Dunjudge - TROUBLES](https://dunjudge.me/analysis/problems/896/) (simple application of Convex Hull Trick after a couple of observations)
 * [CS Academy - Squared Ends](https://csacademy.com/contest/archive/task/squared-ends)
 * [Codeforces - Escape Through Leaf](http://codeforces.com/contest/932/problem/F)
 * [CodeChef - Polynomials](https://www.codechef.com/NOV17/problems/POLY)
+* [Codeforces - Kalila and Dimna in the Logging Industry](https://codeforces.com/problemset/problem/319/C)
+* [Codeforces - Product Sum](https://codeforces.com/problemset/problem/631/E)
+* [Codeforces - Bear and Bowling 4](https://codeforces.com/problemset/problem/660/F)
+* [APIO 2010 - Commando](https://dunjudge.me/analysis/problems/264/)

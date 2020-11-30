@@ -121,7 +121,7 @@ The matrix `capacity` stores the capacity for every pair of vertices.
 
 The function `maxflow` will return the value of the maximal flow.
 During the algorithm the matrix `capacity` will actually store the residual capacity of the network.
-The value of the flow in each edge will actually no stored, but it is easy to extent the implementation - by using an additional matrix - to also store the flow and return it.
+The value of the flow in each edge will actually not be stored, but it is easy to extend the implementation - by using an additional matrix - to also store the flow and return it.
 
 ```cpp edmondskarp
 int n;
@@ -201,3 +201,6 @@ This partition can be easily found using [DFS](./graph/depth-first-search.html) 
 ## Practice Problems
 - [Codeforces - Array and Operations](https://codeforces.com/contest/498/problem/c)
 - [Codeforces - Red-Blue Graph](https://codeforces.com/contest/1288/problem/f)
+- [CSES - Download Speed](https://cses.fi/problemset/task/1694)
+- [CSES - Police Chase](https://cses.fi/problemset/task/1695)
+- [CSES - School Dance](https://cses.fi/problemset/task/1696)

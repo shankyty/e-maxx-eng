@@ -142,10 +142,10 @@ void splice(QuadEdge* a, QuadEdge* b) {
 void delete_edge(QuadEdge* e) {
     splice(e, e->oprev());
     splice(e->rev(), e->rev()->oprev());
-    delete e->rot;
     delete e->rev()->rot;
-    delete e;
     delete e->rev();
+    delete e->rot;
+    delete e;
 }
 
 QuadEdge* connect(QuadEdge* a, QuadEdge* b) {
@@ -298,3 +298,8 @@ vector<tuple<pt, pt, pt>> delaunay(vector<pt> p) {
     return ans;
 }
 ```
+
+## Problems
+ * [TIMUS 1504 Good Manners](http://acm.timus.ru/problem.aspx?space=1&num=1504)
+ * [TIMUS 1520 Empire Strikes Back](http://acm.timus.ru/problem.aspx?space=1&num=1520)
+ * [SGU 383 Caravans](https://codeforces.com/problemsets/acmsguru/problem/99999/383)

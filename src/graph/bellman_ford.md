@@ -140,7 +140,7 @@ In other words, for any vertex $a$ let us denote the $k$ number of edges in the 
 
 <b>Proof</b>: Consider an arbitrary vertex $a$ to which there is a path from the starting vertex $v$, and consider a shortest path to it $(p_0=v, p_1, \ldots, p_k=a)$. Before the first phase, the shortest path to the vertex $p_0 = v$ was found correctly. During the first phase, the edge $(p_0,p_1)$ has been checked by the algorithm, and therefore, the distance to the vertex $p_1$ was correctly calculated after the first phase. Repeating this statement $k$ times, we see that after $k_{th}$ phase the distance to the vertex $p_k = a$ gets calculated correctly, which we wanted to prove.
 
-The last thing to notice is that any shortest path cannot have more than $n - 1$ edges. Therefore, the algorithm sufficiently goes up to the $(n-1)_{th}$ phase. After that no relaxation are guaranteed to improve the distance to some vertex.
+The last thing to notice is that any shortest path cannot have more than $n - 1$ edges. Therefore, the algorithm sufficiently goes up to the $(n-1)_{th}$ phase. After that, it is guaranteed that no relaxation will improve the distance to some vertex.
 
 ## The case of a negative cycle
 
@@ -198,7 +198,7 @@ void solve()
 }
 ```
 
-Due to the presence of a negative cycle, for $n$ iterations of the algorithm, the distances may go far in the negative (apparently, to negative numbers of order $-2^n$). Hence in the code, we adopted additional measures against the integer overflow as follows:
+Due to the presence of a negative cycle, for $n$ iterations of the algorithm, the distances may go far in the negative range (to negative numbers of the order of $-n m W$, where $W$ is the maximum absolute value of any weight in the graph). Hence in the code, we adopted additional measures against the integer overflow as follows:
 
 ```cpp
 d[e[j].b] = max (-INF, d[e[j].a] + e[j].cost);
@@ -210,7 +210,8 @@ For more on this topic — see separate article, [Finding a negative cycle in th
 
 ## Shortest Path Faster Algorithm (SPFA)
 
-SPFA is a improvement of the Bellman-Ford algorithm which takes advantage of the fact that not all attempts at relaxation will work. The main idea is to create a queue containing only the vertices that were relaxed but that still could not relax their neighbors.
+SPFA is a improvement of the Bellman-Ford algorithm which takes advantage of the fact that not all attempts at relaxation will work.
+The main idea is to create a queue containing only the vertices that were relaxed but that still could further relax their neighbors.
 And whenever you can relax some neighbor, you should put him in the queue. This algorithm can also be used to detect negative cycles as the Bellman-Ford.
 
 The worst case of this algorithm is equal to the $O(n m)$ of the Bellman-Ford, but in practice it works much faster and some [people claim that it works even in $O(m)$ on average](https://en.wikipedia.org/wiki/Shortest_Path_Faster_Algorithm#Average-case_performance). However be careful, because this algorithm is deterministic and it is easy to create counterexamples that make the algorithm run in $O(n m)$.
@@ -271,3 +272,5 @@ A list of tasks that can be solved using the Bellman-Ford algorithm:
 * [UVA 12519 - The Farnsworth Parabox](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3964)
 
 See also the problem list in the article [Finding the negative cycle in a graph](./graph/finding-negative-cycle-in-graph.html).
+* [CSES - High Score](https://cses.fi/problemset/task/1673)
+* [CSES - Cycle Finding](https://cses.fi/problemset/task/1197)

@@ -531,7 +531,7 @@ We have to compute the products of $a$ with every cyclic shift of $b$.
 We generate two new arrays of size $2n$:
 We reverse $a$ and append $n$ zeros to it.
 And we just append $b$ to itself.
-When we multiply these two arrays as polynomials, and look at the coefficient $c[n-1],~ c[n],~ c[2n-2]$ of the product $c$, we get:
+When we multiply these two arrays as polynomials, and look at the coefficients $c[n-1],~ c[n],~ \dots,~ c[2n-2]$ of the product $c$, we get:
 $$c[k] = \sum_{i+j=k} a[i] b[j]$$
 And since all the elements $a[i] = 0$ for $i \ge n$:
 $$c[k] = \sum_{i=0}^{n-1} a[i] b[k-i]$$
@@ -595,5 +595,8 @@ If $x$ is the number of wildcards in $P$, then we will have a match of $P$ in $T
 - [SPOJ - ADAMATCH](http://www.spoj.com/problems/ADAMATCH/)
 - [Codeforces - Yet Another String Matching Problem](http://codeforces.com/problemset/problem/954/I)
 - [Codeforces - Lightsabers (hard)](http://codeforces.com/problemset/problem/958/F3)
+- [Codeforces - Running Competition](https://codeforces.com/contest/1398/problem/G)
 - [Kattis - K-Inversions](https://open.kattis.com/problems/kinversions)
 - [Codeforces - Dasha and cyclic table](http://codeforces.com/contest/754/problem/E)
+- [CodeChef - Expected Number of Customers](https://www.codechef.com/COOK112A/problems/MMNN01)
+- [CodeChef - Power Sum](https://www.codechef.com/SEPT19A/problems/PSUM)
